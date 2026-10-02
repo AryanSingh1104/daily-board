@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {allQuestions,totalItems,allowedMisses,status,getStats,answerBlank,answerMatch,answerSet,reveal,cleanAnswers,resultText} from '../docs/core.mjs';
 const b=JSON.parse(readFileSync(new URL('../docs/boards.json',import.meta.url))).boards[0];
-const [music,movies,countries,wildcard]=b.categories;
+const [music,identify,countries,wildcard]=b.categories;
 test('beta content has 36 sourced items, with targets 1/2/3 and one miss per tile',()=>{
  assert.equal(allQuestions(b).reduce((n,q)=>n+totalItems(q),0),36);
  for(const c of b.categories)for(const [i,q]of c.questions.entries()){
@@ -31,7 +31,7 @@ test('set aliases and repeats are free; two distinct wrong guesses close',()=>{
  a=answerSet(q,a.state,'Wrong');assert.equal(a.state.misses,1);a=answerSet(q,a.state,'Wrong!');assert.equal(a.result,'duplicate');a=answerSet(q,a.state,'Another');assert.ok(status(q,a.state).lost);
 });
 test('empty input is free; punctuation, accents and documented aliases accepted',()=>{
- const q=movies.questions[1];assert.equal(answerBlank(q,{},0,'   ').result,'empty');assert.equal(answerBlank(q,{},0,'INC.').result,'correct');
+ const q=music.questions[1];assert.equal(answerBlank(q,{},1,'   ').result,'empty');assert.equal(answerBlank(q,{},1,'INC.').result,'correct');
  const set=wildcard.questions[2];assert.equal(answerSet(set,{},'Róland-Garros').result,'correct');
 });
 test('reveal forfeits unfinished tile, retains earned points and save sanitizes data',()=>{
@@ -41,7 +41,18 @@ test('reveal forfeits unfinished tile, retains earned points and save sanitizes 
  const safe=cleanAnswers(b,{[q.id]:{correct:[-1,0,0,99],wrong:[0,1]}});assert.deepEqual(safe[q.id].correct,[0]);assert.deepEqual(safe[q.id].wrong,[1]);
 });
 test('a complete board earns 2400, uses 24 correct, and share text contains no answers',()=>{
- const a={};for(const q of allQuestions(b)){let s={};for(let i=0;i<q.required;i++)s=(q.type==='fill_blank'?answerBlank(q,s,i,q.items[i].answers[0]):q.type==='matching'?answerMatch(q,s,i,i):answerSet(q,s,q.answers[i].name)).state;a[q.id]=s;}
+ const a={};for(const q of allQuestions(b)){let s={};for(let i=0;i<q.required;i++)s=(['fill_blank','identify'].includes(q.type)?answerBlank(q,s,i,q.items[i].answers[0]):q.type==='matching'?answerMatch(q,s,i,i):answerSet(q,s,q.answers[i].name)).state;a[q.id]=s;}
  const stats=getStats(b,a);assert.equal(stats.score,2400);assert.equal(stats.correct,24);assert.ok(stats.complete);const text=resultText(b,a);assert.match(text,/1\/2 · 2\/3 · 3\/4/);assert.ok(!text.includes('Mercury'));
  assert.throws(()=>answerMatch(countries.questions[0],{},-1,0));
+});
+
+test('description clues accept names and symbols, retain the one-attempt rule',()=>{
+ const q=identify.questions[1];let s=answerBlank(q,{},0,'Austen').state;assert.equal(s.correct.length,1);assert.equal(answerBlank(q,s,0,'Jane Austen').result,'locked');s=answerBlank(q,s,1,'Gold').state;assert.ok(status(q,s).won);
+ const hard=identify.questions[2];assert.equal(answerBlank(hard,{},1,'Wolfram').result,'correct');assert.equal(answerBlank(hard,{},0,'Pierre Curie').result,'wrong');
+});
+test('four distinct formats, source links and local accessible picture cards',()=>{
+ assert.deepEqual(b.categories.map(c=>c.format),['fill_blank','identify','matching','name_set']);
+ const pictures=countries.questions.flatMap(q=>q.pairs).filter(p=>p.image);assert.equal(pictures.length,5);
+ for(const p of pictures){assert.ok(p.image.alt.includes(p.left));const svg=readFileSync(new URL('../docs/'+p.image.src.replace('./',''),import.meta.url),'utf8');assert.match(svg,/<svg/);assert.ok(!svg.includes('<script'));}
+ const answers=allQuestions(b).flatMap(q=>q.items?.flatMap(i=>i.answers)||q.pairs?.map(p=>p.right)||q.answers?.map(a=>a.name));assert.ok(!answers.includes('Mars'));
 });

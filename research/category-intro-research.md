@@ -34,3 +34,15 @@ Keep instructions aligned with the actual authored prompts: if a Music category 
 - Opening help, viewing an example, and dismissing it are always unscored. Preserve focus on close and let keyboard users reach Start and Rules.
 
 This brings in Jeopardy’s concise explanation of a category’s premise while fitting the daily board’s separate formats and current threshold rules.
+
+## Beta board 02: four distinct formats
+
+Music and Movies are now combined as **Screen & Sound** (fill the blanks). **Who or What?** occupies the freed column, using short descriptions to identify people, elements and nations. **Place to Place** contains five original SVG landmark picture cards across the first two rows and text matching at 300 points. **Name the Set** stays as the fourth column. All pools and targets remain 2/3/4 and 1/2/3, with one miss per tile. A new board ID keeps older scores separate.
+
+New first-open rules:
+- Screen & Sound: “Fill the missing word or number in each music or movie clue.” Example only: Jurassic ___ → Park.
+- Who or What?: “Read the description and type the person, element, or nation.” Example only: the Red Planet → Mars.
+- Place to Place: “Match each pictured or named place to its country.” Example only: Big Ben ↔ United Kingdom.
+- Name the Set: unchanged.
+
+Identification facts were checked against [Nobel Prize material](https://www.nobelprize.org/prizes/themes/the-nobel-prize-in-physics-1901-2000/), [Marie Curie’s lecture](https://www.nobelprize.org/prizes/chemistry/1911/marie-curie/lecture/?print=1), [Jane Austen’s House](https://janeaustens.house/jane-austen/), the [Royal Society of Chemistry periodic table](https://periodic-table.rsc.org/element/8/oxygen), [Tourism New Zealand’s Wellington guide](https://www.newzealand.com/assets/Tourism-NZ/PDFs/d31606_1.pdf), and [Thimphu city’s annual report](https://thimphucity.bt/wp-content/uploads/2025/03/AR-2023-for-WEB.pdf). Each scored item retains its own source URL. No external photographs are bundled; the picture cards are original illustrations.

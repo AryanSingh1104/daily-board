@@ -1,25 +1,29 @@
 {
   "boards": [
     {
-      "id": "beta-01",
+      "id": "beta-02",
       "title": "Pick your path",
       "categories": [
         {
-          "id": "music",
-          "family": "Music",
-          "title": "Sound Check",
+          "id": "entertainment",
+          "family": "Music & Movies",
+          "title": "Screen & Sound",
           "format": "fill_blank",
-          "description": "Fill in missing names, places, and musical facts.",
+          "description": "Complete a mix of film titles and musical facts.",
+          "intro": {
+            "rule": "Fill the missing word or number in each music or movie clue.",
+            "example": "Jurassic ___ → Park"
+          },
           "questions": [
             {
-              "id": "t01-music-100",
+              "id": "b02-entertainment-100",
               "value": 100,
               "type": "fill_blank",
               "required": 1,
-              "prompt": "Fill 1 of these 2 music blanks.",
+              "prompt": "Complete 1 of these 2 music and movie clues.",
               "items": [
                 {
-                  "id": "t01-music-100-1",
+                  "id": "b02-entertainment-100-1",
                   "prompt": "Queen's lead singer: Freddie ____.",
                   "answers": [
                     "Mercury",
@@ -28,24 +32,25 @@
                   "source": "https://www.queenonline.com/freddie_mercury"
                 },
                 {
-                  "id": "t01-music-100-2",
-                  "prompt": "The Beatles' early Cavern Club shows were in ____.",
+                  "id": "b02-entertainment-100-2",
+                  "prompt": "Finding ____ (2003)",
                   "answers": [
-                    "Liverpool"
+                    "Nemo",
+                    "Finding Nemo"
                   ],
-                  "source": "https://www.thebeatles.com/red-and-blue-timeline"
+                  "source": "https://www.pixar.com/feature-films"
                 }
               ]
             },
             {
-              "id": "t01-music-200",
+              "id": "b02-entertainment-200",
               "value": 200,
               "type": "fill_blank",
               "required": 2,
-              "prompt": "Fill 2 of these 3 music blanks.",
+              "prompt": "Complete 2 of these 3 music and movie clues.",
               "items": [
                 {
-                  "id": "t01-music-200-1",
+                  "id": "b02-entertainment-200-1",
                   "prompt": "A standard modern piano has ____ keys.",
                   "answers": [
                     "88",
@@ -55,116 +60,7 @@
                   "source": "https://hub.yamaha.com/pianos/p-acoustic/why-arent-there-more-than-88-keys-on-a-piano/"
                 },
                 {
-                  "id": "t01-music-200-2",
-                  "prompt": "A standard violin has ____ strings.",
-                  "answers": [
-                    "4",
-                    "four"
-                  ],
-                  "source": "https://data.yamaha.com/files/download/other_assets/6/3204496/violin_8multi_om_a0_vfg6890_web.pdf"
-                },
-                {
-                  "id": "t01-music-200-3",
-                  "prompt": "The saxophone belongs to the ____ instrument family.",
-                  "answers": [
-                    "woodwind",
-                    "woodwinds"
-                  ],
-                  "source": "https://www.yamaha.com/en/musical_instrument_guide/saxophone/structure/structure003.html"
-                }
-              ]
-            },
-            {
-              "id": "t01-music-300",
-              "value": 300,
-              "type": "fill_blank",
-              "required": 3,
-              "prompt": "Fill 3 of these 4 music blanks.",
-              "items": [
-                {
-                  "id": "t01-music-300-1",
-                  "prompt": "An electronic instrument played with hands near antennas, without contact: ____.",
-                  "answers": [
-                    "theremin"
-                  ],
-                  "source": "https://collection.sciencemuseumgroup.org.uk/objects/co8593059/rca-theremin-usa-1929-musical-instruments"
-                },
-                {
-                  "id": "t01-music-300-2",
-                  "prompt": "ABBA won Eurovision in 1974 with ____.",
-                  "answers": [
-                    "Waterloo"
-                  ],
-                  "source": "https://abbasite.com/articles/waterloo-39-years-since-abbas-breakthrough/"
-                },
-                {
-                  "id": "t01-music-300-3",
-                  "prompt": "The saxophone's inventor was Adolphe ____.",
-                  "answers": [
-                    "Sax",
-                    "Adolphe Sax"
-                  ],
-                  "source": "https://hub.yamaha.com/winds/wood/whats-the-difference-between-soprano-alto-tenor-and-baritone-saxophones/"
-                },
-                {
-                  "id": "t01-music-300-4",
-                  "prompt": "Freddie Mercury was born on the island of ____.",
-                  "answers": [
-                    "Zanzibar"
-                  ],
-                  "source": "https://www.queenonline.com/freddie_mercury"
-                }
-              ]
-            }
-          ],
-          "intro": {
-            "rule": "Fill in the missing music name, word, or number.",
-            "example": "Rolling ___ → Stones"
-          }
-        },
-        {
-          "id": "movies",
-          "family": "Movies",
-          "title": "Title Cards",
-          "format": "fill_blank",
-          "description": "Complete familiar film titles, then try a deeper cut.",
-          "questions": [
-            {
-              "id": "t01-movies-100",
-              "value": 100,
-              "type": "fill_blank",
-              "required": 1,
-              "prompt": "Complete 1 of these 2 film titles.",
-              "items": [
-                {
-                  "id": "t01-movies-100-1",
-                  "prompt": "Finding ____ (2003)",
-                  "answers": [
-                    "Nemo",
-                    "Finding Nemo"
-                  ],
-                  "source": "https://www.pixar.com/feature-films"
-                },
-                {
-                  "id": "t01-movies-100-2",
-                  "prompt": "Toy ____ (1995)",
-                  "answers": [
-                    "Story",
-                    "Toy Story"
-                  ],
-                  "source": "https://www.pixar.com/feature-films"
-                }
-              ]
-            },
-            {
-              "id": "t01-movies-200",
-              "value": 200,
-              "type": "fill_blank",
-              "required": 2,
-              "prompt": "Complete 2 of these 3 film titles.",
-              "items": [
-                {
-                  "id": "t01-movies-200-1",
+                  "id": "b02-entertainment-200-2",
                   "prompt": "Monsters, ____.",
                   "answers": [
                     "Inc",
@@ -175,35 +71,41 @@
                   "source": "https://www.pixar.com/monsters-inc"
                 },
                 {
-                  "id": "t01-movies-200-2",
+                  "id": "b02-entertainment-200-3",
                   "prompt": "Inside ____ (2015)",
                   "answers": [
                     "Out",
                     "Inside Out"
                   ],
                   "source": "https://www.pixar.com/feature-films"
-                },
-                {
-                  "id": "t01-movies-200-3",
-                  "prompt": "A Bug's ____",
-                  "answers": [
-                    "Life",
-                    "A Bugs Life",
-                    "A Bug's Life"
-                  ],
-                  "source": "https://www.pixar.com/feature-films"
                 }
               ]
             },
             {
-              "id": "t01-movies-300",
+              "id": "b02-entertainment-300",
               "value": 300,
               "type": "fill_blank",
               "required": 3,
-              "prompt": "Complete 3 of these 4 film titles.",
+              "prompt": "Complete 3 of these 4 music and movie clues.",
               "items": [
                 {
-                  "id": "t01-movies-300-1",
+                  "id": "b02-entertainment-300-1",
+                  "prompt": "An electronic instrument played with hands near antennas, without contact: ____.",
+                  "answers": [
+                    "theremin"
+                  ],
+                  "source": "https://collection.sciencemuseumgroup.org.uk/objects/co8593059/rca-theremin-usa-1929-musical-instruments"
+                },
+                {
+                  "id": "b02-entertainment-300-2",
+                  "prompt": "ABBA won Eurovision in 1974 with ____.",
+                  "answers": [
+                    "Waterloo"
+                  ],
+                  "source": "https://abbasite.com/articles/waterloo-39-years-since-abbas-breakthrough/"
+                },
+                {
+                  "id": "b02-entertainment-300-3",
                   "prompt": "My Neighbor ____",
                   "answers": [
                     "Totoro",
@@ -213,39 +115,151 @@
                   "source": "https://gkids.com/films/my-neighbor-totoro/"
                 },
                 {
-                  "id": "t01-movies-300-4",
-                  "prompt": "Crouching Tiger, Hidden ____",
-                  "answers": [
-                    "Dragon",
-                    "Crouching Tiger Hidden Dragon"
-                  ],
-                  "source": "https://www.sonypictures.com/movies/crouchingtigerhiddendragon"
-                },
-                {
-                  "id": "t01-movies-300-5",
+                  "id": "b02-entertainment-300-4",
                   "prompt": "Eternal Sunshine of the ____ Mind",
                   "answers": [
                     "Spotless",
                     "Eternal Sunshine of the Spotless Mind"
                   ],
                   "source": "https://www.focusfeatures.com/eternal_sunshine_of_the_spotless_mind"
-                },
-                {
-                  "id": "t01-movies-300-6",
-                  "prompt": "The Tale of the Princess ____",
-                  "answers": [
-                    "Kaguya",
-                    "The Tale of the Princess Kaguya"
-                  ],
-                  "source": "https://gkids.com/films/the-tale-of-the-princess-kaguya/"
                 }
               ]
             }
-          ],
+          ]
+        },
+        {
+          "id": "identify",
+          "family": "People & Things",
+          "title": "Who or What?",
+          "format": "identify",
+          "description": "Identify people, elements, and nations from short descriptions.",
           "intro": {
-            "rule": "Complete the movie title with the missing word.",
-            "example": "Jurassic ___ → Park"
-          }
+            "rule": "Read the description and type the person, element, or nation.",
+            "example": "The planet called the Red Planet → Mars"
+          },
+          "questions": [
+            {
+              "id": "b02-identify-100",
+              "value": 100,
+              "type": "identify",
+              "required": 1,
+              "prompt": "Identify 1 of these 2 people, elements, or nations.",
+              "items": [
+                {
+                  "theme": "Person",
+                  "prompt": "The physicist who developed the theories of relativity.",
+                  "answers": [
+                    "Albert Einstein",
+                    "Einstein"
+                  ],
+                  "source": "https://www.nobelprize.org/prizes/themes/the-nobel-prize-in-physics-1901-2000/",
+                  "id": "b02-identify-100-1"
+                },
+                {
+                  "theme": "Element",
+                  "prompt": "The element with atomic number 8, needed for human respiration.",
+                  "answers": [
+                    "Oxygen",
+                    "O"
+                  ],
+                  "source": "https://periodic-table.rsc.org/element/8/oxygen",
+                  "id": "b02-identify-100-2"
+                }
+              ]
+            },
+            {
+              "id": "b02-identify-200",
+              "value": 200,
+              "type": "identify",
+              "required": 2,
+              "prompt": "Identify 2 of these 3 people, elements, or nations.",
+              "items": [
+                {
+                  "theme": "Person",
+                  "prompt": "The novelist who wrote Pride and Prejudice and Emma.",
+                  "answers": [
+                    "Jane Austen",
+                    "Austen"
+                  ],
+                  "source": "https://janeaustens.house/jane-austen/",
+                  "id": "b02-identify-200-1"
+                },
+                {
+                  "theme": "Element",
+                  "prompt": "The precious metal represented by the chemical symbol Au.",
+                  "answers": [
+                    "Gold",
+                    "Au"
+                  ],
+                  "source": "https://periodic-table.rsc.org/element/79/gold",
+                  "id": "b02-identify-200-2"
+                },
+                {
+                  "theme": "Nation",
+                  "prompt": "The country whose capital is Wellington.",
+                  "answers": [
+                    "New Zealand",
+                    "NZ",
+                    "Aotearoa",
+                    "Aotearoa New Zealand"
+                  ],
+                  "source": "https://www.newzealand.com/assets/Tourism-NZ/PDFs/d31606_1.pdf",
+                  "id": "b02-identify-200-3"
+                }
+              ]
+            },
+            {
+              "id": "b02-identify-300",
+              "value": 300,
+              "type": "identify",
+              "required": 3,
+              "prompt": "Identify 3 of these 4 people, elements, or nations.",
+              "items": [
+                {
+                  "theme": "Person",
+                  "prompt": "The scientist who shared in discovering polonium and radium, and won the 1911 Chemistry Nobel Prize.",
+                  "answers": [
+                    "Marie Curie",
+                    "Marie Sklodowska Curie",
+                    "Marie Skłodowska-Curie"
+                  ],
+                  "source": "https://www.nobelprize.org/prizes/chemistry/1911/marie-curie/lecture/?print=1",
+                  "id": "b02-identify-300-1"
+                },
+                {
+                  "theme": "Element",
+                  "prompt": "The metal with atomic number 74 and the chemical symbol W.",
+                  "answers": [
+                    "Tungsten",
+                    "Wolfram",
+                    "W"
+                  ],
+                  "source": "https://periodic-table.rsc.org/element/74/tungsten",
+                  "id": "b02-identify-300-2"
+                },
+                {
+                  "theme": "Nation",
+                  "prompt": "The Himalayan kingdom whose capital is Thimphu.",
+                  "answers": [
+                    "Bhutan",
+                    "Kingdom of Bhutan"
+                  ],
+                  "source": "https://thimphucity.bt/wp-content/uploads/2025/03/AR-2023-for-WEB.pdf",
+                  "id": "b02-identify-300-3"
+                },
+                {
+                  "theme": "Element",
+                  "prompt": "The element with atomic number 51, represented by Sb.",
+                  "answers": [
+                    "Antimony",
+                    "Sb"
+                  ],
+                  "source": "https://periodic-table.rsc.org/element/51/antimony",
+                  "id": "b02-identify-300-4"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "countries",
@@ -255,7 +269,7 @@
           "description": "Match cities and landmarks to their countries.",
           "questions": [
             {
-              "id": "t01-countries-100",
+              "id": "b02-countries-100",
               "value": 100,
               "type": "matching",
               "required": 1,
@@ -264,17 +278,25 @@
                 {
                   "left": "Eiffel Tower",
                   "right": "France",
-                  "source": "https://whc.unesco.org/en/list/600/"
+                  "source": "https://whc.unesco.org/en/list/600/",
+                  "image": {
+                    "src": "./assets/eiffel-tower.svg",
+                    "alt": "Illustration of Eiffel Tower"
+                  }
                 },
                 {
                   "left": "Colosseum",
                   "right": "Italy",
-                  "source": "https://whc.unesco.org/en/list/91/"
+                  "source": "https://whc.unesco.org/en/list/91/",
+                  "image": {
+                    "src": "./assets/colosseum.svg",
+                    "alt": "Illustration of Colosseum"
+                  }
                 }
               ]
             },
             {
-              "id": "t01-countries-200",
+              "id": "b02-countries-200",
               "value": 200,
               "type": "matching",
               "required": 2,
@@ -283,22 +305,34 @@
                 {
                   "left": "Taj Mahal",
                   "right": "India",
-                  "source": "https://whc.unesco.org/en/list/252/"
+                  "source": "https://whc.unesco.org/en/list/252/",
+                  "image": {
+                    "src": "./assets/taj-mahal.svg",
+                    "alt": "Illustration of Taj Mahal"
+                  }
                 },
                 {
                   "left": "Machu Picchu",
                   "right": "Peru",
-                  "source": "https://whc.unesco.org/en/list/274/"
+                  "source": "https://whc.unesco.org/en/list/274/",
+                  "image": {
+                    "src": "./assets/machu-picchu.svg",
+                    "alt": "Illustration of Machu Picchu"
+                  }
                 },
                 {
                   "left": "Petra",
                   "right": "Jordan",
-                  "source": "https://whc.unesco.org/en/list/326/"
+                  "source": "https://whc.unesco.org/en/list/326/",
+                  "image": {
+                    "src": "./assets/petra.svg",
+                    "alt": "Illustration of Petra"
+                  }
                 }
               ]
             },
             {
-              "id": "t01-countries-300",
+              "id": "b02-countries-300",
               "value": 300,
               "type": "matching",
               "required": 3,
@@ -328,7 +362,7 @@
             }
           ],
           "intro": {
-            "rule": "Pick a place, then match it to its country.",
+            "rule": "Match each pictured or named place to its country.",
             "example": "Big Ben ↔ United Kingdom"
           }
         },
@@ -340,7 +374,7 @@
           "description": "Recall enough members of a clearly defined set.",
           "questions": [
             {
-              "id": "t01-wildcard-100",
+              "id": "b02-wildcard-100",
               "value": 100,
               "type": "name_set",
               "required": 1,
@@ -359,7 +393,7 @@
               ]
             },
             {
-              "id": "t01-wildcard-200",
+              "id": "b02-wildcard-200",
               "value": 200,
               "type": "name_set",
               "required": 2,
@@ -383,7 +417,7 @@
               ]
             },
             {
-              "id": "t01-wildcard-300",
+              "id": "b02-wildcard-300",
               "value": 300,
               "type": "name_set",
               "required": 3,
@@ -427,7 +461,8 @@
             "example": "Name a season → Spring"
           }
         }
-      ]
+      ],
+      "edition": "02"
     }
   ]
 }

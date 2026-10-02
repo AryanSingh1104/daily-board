@@ -4,7 +4,7 @@ An original daily trivia prototype with a selectable category-and-points board. 
 
 ## Play
 
-Four columns (music, movies, countries, wildcard), three tiles each:
+Four columns (Music & Movies, Who or What?, Place to Place, Name the Set), three tiles each:
 
 | Value | Items | Correct needed | Misses allowed |
 | --- | --- | --- | --- |
@@ -14,9 +14,9 @@ Four columns (music, movies, countries, wildcard), three tiles each:
 
 The board has 36 items. Earn 1,200 out of 2,400 points to reach the goal; a perfect board needs 24 correct answers. There is no timer or forced order.
 
-Music and movie titles use fill-in blanks; countries use matching; the wildcard asks for members of a finite set. Each category has a short introduction with an unscored example, displayed once per board and available through Rules. A second miss closes a tile. Blanks and places get one attempt each. Repeated set answers cost nothing. Correct matches remain recorded, and a wrong match leaves the chosen country available for another place.
+Music and movies share an entertainment column of fill-in blanks. Who or What? asks players to identify people, elements, and nations from short descriptions. Place to Place mixes illustrated landmarks with text-based country matching. Name the Set asks for members of a finite set. Each category has a short introduction with an unscored example, displayed once per board and available through Rules. A second miss closes a tile. Blanks and places get one attempt each. Repeated set answers cost nothing. Correct matches remain recorded, and a wrong match leaves the chosen country available for another place.
 
-Progress and acknowledged category rules are saved in the current browser. Results can be copied without answers. Give feedback copies a short feedback message for the player to send manually; it submits nothing to a server. Category browsing contains eight proposed families and forty theme ideas.
+Progress and acknowledged category rules are saved in the current browser. Results can be copied without answers. Give feedback copies a short feedback message for the player to send manually; it submits nothing to a server. Category browsing contains seven proposed families and thirty-five theme ideas.
 
 ## Local development
 
@@ -37,4 +37,6 @@ This beta contains one fixed board. A future daily schedule can remain static: a
 
 Answer keys are downloadable because this is a static prototype. There are no accounts, leaderboard, analytics, or daily streaks. Difficulty and the goal need player feedback. The third row combines a higher target with harder content; its actual difficulty has not been measured.
 
-Question wording and the interface are original. Facts have source links in `boards.json`, available after answer reveal. Daily Orbs and Jeopardy were studied for interaction patterns and concise category explanations; no question bank or visual assets were copied. Research notes are included in `research`.
+Question wording and the interface are original. Facts have source links in `boards.json`, available after answer reveal. Daily Orbs and Jeopardy were studied for interaction patterns and concise category explanations; no question bank or visual assets were copied. Five landmark illustrations are original SVGs stored in `docs/assets`, with descriptive alt text. Research notes are included in `research`.
+
+Beta board 02 has a separate board ID. Previous beta progress is preserved in its existing browser storage; changed clues never inherit earned points from the old board.

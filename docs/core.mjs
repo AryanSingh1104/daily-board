@@ -30,7 +30,7 @@ export function getStats(board, answers) {
 }
 function validIndex(q, index) { if(!Number.isInteger(index)||index<0||index>=totalItems(q)) throw new Error('Invalid item.'); }
 export function answerBlank(q,input,index,value) {
-  if(q.type!=='fill_blank')throw new Error('Wrong question format.');validIndex(q,index);
+  if(!['fill_blank','identify'].includes(q.type))throw new Error('Wrong question format.');validIndex(q,index);
   const s=cleanState(q,input), normalized=normalize(value);
   if(status(q,s).ended||s.correct.includes(index)||s.wrong.includes(index))return {state:s,result:'locked'};
   if(!normalized)return {state:s,result:'empty'};
@@ -57,5 +57,5 @@ export function reveal(q,input) { const s=cleanState(q,input);return {...s,revea
 export function resultText(board,answers) {
   const s=getStats(board,answers);
   const grid=[0,1,2].map(row=>board.categories.map(c=>{const st=status(c.questions[row],answers[c.questions[row].id]);return st.won?'🟦':st.lost?'⬛':st.correct.length?'🟨':'⬜';}).join('')).join('\n');
-  return `Daily Board · Beta\n${s.score.toLocaleString('en-US')} / 2,400 points · ${s.cleared}/12 tiles cleared\n${grid}\n1/2 · 2/3 · 3/4\n${s.correct} answers found · ${s.misses} misses\n${s.won?'Daily goal reached!':s.complete?'Board complete.':'Still playing.'}`;
+  return `Daily Board · Beta ${board.edition||'01'}\n${s.score.toLocaleString('en-US')} / 2,400 points · ${s.cleared}/12 tiles cleared\n${grid}\n1/2 · 2/3 · 3/4\n${s.correct} answers found · ${s.misses} misses\n${s.won?'Daily goal reached!':s.complete?'Board complete.':'Still playing.'}`;
 }
